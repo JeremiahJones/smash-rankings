@@ -1,0 +1,15 @@
+table
+  thead
+    tr
+      th = 'Rank'
+      th = 'Gamer Tag'
+      th = 'Score'
+      th = 'Change'
+
+  tbody
+    - @players.each do |player|
+      tr
+        td = player.rank
+        td = player.gamer_tag
+        td = player.score
+        td = player.change
