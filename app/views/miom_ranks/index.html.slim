@@ -1,0 +1,27 @@
+h1 Listing miom_ranks
+
+table
+  thead
+    tr
+      th Year
+      th Score
+      th Change
+      th Rank
+      th
+      th
+      th
+
+  tbody
+    - @miom_ranks.each do |miom_rank|
+      tr
+        td = miom_rank.year
+        td = miom_rank.score
+        td = miom_rank.change
+        td = miom_rank.rank
+        td = link_to 'Show', miom_rank
+        td = link_to 'Edit', edit_miom_rank_path(miom_rank)
+        td = link_to 'Destroy', miom_rank, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Miom rank', new_miom_rank_path

@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180303012957) do
+ActiveRecord::Schema.define(version: 20180307041320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "players", force: :cascade do |t|
+  create_table "miom_ranks", force: :cascade do |t|
+    t.bigint "player_id"
+    t.integer "year"
+    t.integer "score"
+    t.string "change"
     t.integer "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["player_id"], name: "index_miom_ranks_on_player_id"
+  end
+
+  create_table "players", force: :cascade do |t|
     t.string "gamer_tag"
     t.string "country"
     t.string "first_name"
@@ -25,8 +35,6 @@ ActiveRecord::Schema.define(version: 20180303012957) do
     t.string "youtube"
     t.string "twitter"
     t.string "twitch"
-    t.integer "score"
-    t.string "change"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
