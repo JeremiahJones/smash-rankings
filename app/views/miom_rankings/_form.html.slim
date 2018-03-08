@@ -1,0 +1,9 @@
+= form_for @miom_ranking do |f|
+  - if @miom_ranking.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@miom_ranking.errors.count, "error")} prohibited this miom_ranking from being saved:"
+      ul
+        - @miom_ranking.errors.full_messages.each do |message|
+          li = message
+
+  .actions = f.submit

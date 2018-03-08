@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307041320) do
+ActiveRecord::Schema.define(version: 20180308045835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "miom_ranks", force: :cascade do |t|
+  create_table "miom_rankings", force: :cascade do |t|
     t.bigint "player_id"
     t.integer "year"
-    t.integer "score"
+    t.float "score"
     t.string "change"
     t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["player_id"], name: "index_miom_ranks_on_player_id"
+    t.index ["player_id"], name: "index_miom_rankings_on_player_id"
   end
 
   create_table "players", force: :cascade do |t|

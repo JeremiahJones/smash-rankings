@@ -1,9 +1,9 @@
-class CreateMiomRanks < ActiveRecord::Migration[5.1]
+class CreateMiomRankings < ActiveRecord::Migration[5.1]
   def change
-    create_table :miom_ranks do |t|
+    create_table :miom_rankings do |t|
       t.belongs_to :player, index: true
       t.integer :year
-      t.decimal :score
+      t.float :score
       t.string :change
       t.integer :rank
 
