@@ -22,6 +22,7 @@ namespace :populate_players_and_rankings do
                                    score: row_values[4].to_f,
                                    change: (row_values[5].squish.include?('9000') ? 'NEW' : row_values[5].squish),
                                    rank: row_values[0].to_f)
+      @player.save
     end
     puts "\r2017 ranking done"
   end
@@ -41,6 +42,7 @@ namespace :populate_players_and_rankings do
                                    score: (row_values[4].include?('.') ? row_values[4].delete('.').insert(2, '.').to_f : row_values[4].insert(1, '0').to_f),
                                    change: (row_values[5].squish.include?('9000') ? 'NEW' : row_values[5].squish),
                                    rank: row_values[0].to_f)
+      @player.save
     end
     puts "\r2016 ranking done"
   end
@@ -60,6 +62,7 @@ namespace :populate_players_and_rankings do
                                    score: (row_values[4].include?('.') ? row_values[4].delete('.').insert(2, '.').to_f : row_values[4].insert(1, '0').to_f),
                                    change: (row_values[5].squish.include?('9000') ? 'NEW' : row_values[5].squish),
                                    rank: row_values[0].to_f)
+      @player.save
     end
     puts "\r2015 ranking done"
   end
@@ -80,6 +83,7 @@ namespace :populate_players_and_rankings do
                                    score: (row_values[4].include?('.') ? row_values[4].delete('.').insert(2, '.').to_f : row_values[4].insert(1, '0').to_f),
                                    change: (row_values[5].squish.include?('9000') ? 'NEW' : row_values[5].squish),
                                    rank: row_values[0].to_f)
+      @player.save
     end
     puts "\r2014 ranking done"
   end
@@ -99,6 +103,7 @@ namespace :populate_players_and_rankings do
       @player.miom_rankings.create(year: '2013',
                                    score: (row_values[4].include?('.') ? row_values[4].delete('.').insert(2, '.').to_f : row_values[4].insert(1, '0').to_f),
                                    rank: row_values[0].to_f)
+      @player.save
     end
     puts "\r2013 ranking done"
   end

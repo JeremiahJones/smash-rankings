@@ -1,15 +1,14 @@
-table
+table.table-dark
   thead
     tr
-      th = 'Rank'
       th = 'Gamer Tag'
-      th = 'Score'
-      th = 'Change'
+      th = 'Country'
+      th = 'Characters'
+      th = 'Twitter'
 
   tbody
     - @players.each do |player|
       tr
-        td = player.rank
         td = player.gamer_tag
-        td = player.score
-        td = player.change
+        td = player.country
+        td = player.characters
